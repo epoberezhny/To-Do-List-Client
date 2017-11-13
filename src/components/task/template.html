@@ -11,7 +11,7 @@
     <span ng-class="{ completed: $ctrl.task.done }">
       {{ $ctrl.task.name }}
     </span>
-    <span class="d-block small" ng-class="$ctrl.deadlineClass()">
+    <span class="d-block small" ng-if="$ctrl.task.deadline && !$ctrl.task.done" ng-class="$ctrl.deadlineClass()">
       {{ $ctrl.task.deadline | date:'dd/MM/yyyy HH:mm' }}
     </span>
   </div>
