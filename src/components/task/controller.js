@@ -32,7 +32,7 @@ export default class TaskController {
     this.popoverOpened = !this.popoverOpened;
   }
 
-  openDeleteModal(event) {
+  openDeleteModal() {
     var params = {
       item: this.task,
       itemType: 'task',
@@ -47,7 +47,7 @@ export default class TaskController {
       projectId: this.task['project_id'],
       taskId: this.task.id,
       comments: this.task.comments,
-      setComments: (comments) => { this.setComments(comments); }
+      setComments: (comments) => { this.setComments(comments) }
     };
 
     this.$state.go('modal.comments', params)
