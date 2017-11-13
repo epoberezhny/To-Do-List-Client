@@ -1,0 +1,26 @@
+<form name="addCommentForm">
+  <div class="modal-body">
+    <div class="p-relative form-group">
+      <textarea name="text" class="form-control" rows="3" ng-model="$ctrl.commentParams.text" required></textarea>
+      <label class="fa fa-paperclip paperclip btn-todo">
+        <input name="attachment" type="file" hidden>
+      </label>
+    </div>
+
+    <div class="row" ng-if="$ctrl.preview">
+      <div class="col-md-6 col mx-auto">
+        <img class="img-fluid img-thumbnail" ng-src="{{ $ctrl.preview }}" alt="preview">
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-footer row no-gutters border-top-0">
+    <div class="col-5 col-md-4">
+      <button type="button" class="btn btn-block btn-primary py-3" ng-click="$ctrl.onSubmit()">Save</button>
+    </div>
+
+    <div>
+      <a href="#" class="btn btn-link py-3" ng-click="$ctrl.onClose()">Cancel</a>
+    </div>
+  </div>
+</form>

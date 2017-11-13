@@ -1,0 +1,126 @@
+$bg-todo: #E0E6F3;
+$bg-project-header: $bg-todo;
+$bg-hover: #f7f7f6;
+$btn-hover: #3d3d3d;
+$btn-color: #868686;
+
+.p-relative {
+  position: relative;
+}
+
+.completed {
+  color: $btn-color;
+  text-decoration: line-through;
+}
+
+.btn, .nav-link {
+  cursor: pointer;
+}
+
+textarea {
+  resize: none;
+}
+
+.form-control[readonly] {
+  background-color: initial;
+}
+
+.paperclip {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+
+  margin-bottom: 0;
+
+  font-size: 21px;
+}
+
+.bg-todo {
+  background-color: $bg-todo;
+}
+
+.new-project-form,
+.new-task-form,
+.edit-project-form,
+.edit-task-form {
+  width: 100%;
+}
+
+.project-header {
+  cursor: pointer;
+  z-index: 5;
+}
+
+.project-btns,
+.task-btns,
+.sorting-btns {
+  opacity: 0;
+}
+
+.project-btns,
+.task-btns {
+  transition: opacity .25s ease; 
+}
+
+.sorting-btns {
+  transition: all .25s ease !important; 
+}
+
+.project-header:hover > .project-btns,
+.task:hover > .task-btns,
+.task:hover .sorting-btns {
+  opacity: 1;
+}
+
+.project-header,
+.task {
+  position: relative;
+
+  transition: background-color .25s ease;
+  will-change: background-color;
+}
+
+.project.opened .project-header {
+  background-color: $bg-project-header;
+}
+
+.fa-caret-right {
+  transition: transform .25s ease;
+}
+
+.sorting-btns > .fa {
+  font-size: 10px;
+}
+
+.color-todo,
+.btn-todo {
+  color: $btn-color;
+}
+
+.btn-todo {
+  cursor: pointer;
+  transition: color .25s ease;
+  will-change: color;
+
+  &:hover {
+    color: $btn-hover;
+  }
+}
+
+.project:not(.opened) .project-header:hover,
+.task:hover {
+  background-color: $bg-hover;
+}
+
+.comment-date {
+  font-size: 12px;
+}
+
+.deadline-popover {
+  position: absolute;
+  width: 300px;
+  right: 20px;
+  bottom: -198px;
+
+  z-index: 10;
+}

@@ -1,0 +1,27 @@
+<div class="row no-gutters border rounded-bottom">
+  <form name="addTaskForm" class="new-task-form" ng-submit="$ctrl.onSubmit(addTaskForm)" autocomplete="off" novalidate>
+    <div class="row no-gutters p-3">
+      <div class="col-12">
+        <input
+          name="name"
+          type="text"
+          class="form-control p-0 pl-3 border-0"
+          placeholder="Enter Task Name..."
+          ng-click="$ctrl.activate()"
+          ng-model="$ctrl.taskParams.name"
+          required
+        >
+      </div>
+    </div>
+
+    <div class="row no-gutters px-4 py-3 border border-left-0 border-right-0 border-bottom-0 toggle" ng-if="$ctrl.active">
+      <div class="col-6 col-md-3">
+        <button type="submit" class="btn btn-block btn-success py-3">Add task</button>
+      </div>
+
+      <div class="col">
+        <a href="#" class="btn btn-link py-3" ng-click="$ctrl.deactivate()">Cancel</a>
+      </div>
+    </div>
+  </form>
+</div>

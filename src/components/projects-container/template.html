@@ -1,0 +1,25 @@
+<div class="container mt-5">
+  <div class="row no-gutters">
+    <div class="col-md-9 mx-md-auto">
+      <h5 class="font-weight-bold">Projects</h5>
+    </div>
+  </div>
+
+  <div class="toggle" ng-repeat="project in $ctrl.projects | orderBy: 'id' track by project.id">
+    <tdl-project-container>
+      <tdl-edit-project-form
+        project="project"  
+        update-project="$ctrl.updateProject($index, params)"
+      ></tdl-edit-project-form>
+  
+      <tdl-project
+        project="project"
+        delete-project="$ctrl.deleteProject($index, params)"
+      ></tdl-project>
+    </tdl-project-container>
+  </div>
+
+  <tdl-add-project-form
+    create-project="$ctrl.createProject(params)"
+  ></tdl-add-project-form>
+</div>

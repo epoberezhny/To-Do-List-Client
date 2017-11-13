@@ -1,0 +1,65 @@
+<div class="container mt-5">
+  <div class="row no-gutters">
+    <div class="col-md-4 mx-md-auto">
+      <h5 class="font-weight-bold mb-3">
+        Sign In
+      </h5>
+
+      <script type="text/ng-template" id="generic-messages">
+        <div ng-message="required" class="invalid-feedback d-block fade-in">
+          The field is required.
+        </div>
+      </script>
+
+      <form ng-submit="$ctrl.onSubmit(signinForm)" name="signinForm" novalidate>
+        <div class="form-group">
+          <input
+            name="email"
+            type="email"
+            class="form-control"
+            placeholder="Enter email"
+            ng-model="$ctrl.user.email"
+            ng-class="{ 'is-invalid': signinForm.email.$invalid && signinForm.$submitted }"
+            required
+          >
+
+          <div ng-messages="signinForm.email.$error" ng-if="signinForm.$submitted">
+            <div class="invalid-feedback d-block fade-in" ng-message="email">
+              Enter valid email.
+            </div>
+            <div ng-messages-include="generic-messages"></div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input
+            name="password"
+            type="password"
+            class="form-control"
+            placeholder="Password"
+            ng-model="$ctrl.user.password"
+            ng-maxlength="8"
+            ng-minlength="8"
+            ng-class="{ 'is-invalid': signinForm.password.$invalid && signinForm.$submitted }"
+            required
+          >
+
+          <div ng-messages="signinForm.password.$error" ng-if="signinForm.$submitted">
+            <div ng-messages-include="generic-messages"></div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg w-50">Sign In</button>
+      </form>
+
+      <div class="form-group mt-3">
+        <p>
+          Don't have an account?
+          <a ui-sref="root.signup" class="btn btn-link pl-0">
+            Sign Up
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

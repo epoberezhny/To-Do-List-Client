@@ -1,0 +1,27 @@
+<nav class="navbar navbar-light bg-todo">
+  <div class="container">
+    <div class="row no-gutters w-100">
+      <div class="col">
+        <a class="navbar-brand" href="#">
+          <img src="../../assets/images/rg_color_logo_horizontal.svg" height="50" alt="logo">
+        </a>
+      </div>
+  
+      <div class="col align-items-center justify-content-center d-md-flex d-none">
+        <h3 class="navbar-text font-weight-bold">
+          Simple ToDo List
+        </h3>
+      </div>
+  
+      <div class="col d-flex align-items-center justify-content-end">
+        <ul class="navbar-nav">
+          <li class="nav-item" ng-if="$ctrl.user">
+            <a class="nav-link" ng-click="$ctrl.logOut()">
+              <span class="fa fa-sign-out fa-2x" aria-hidden="true"></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

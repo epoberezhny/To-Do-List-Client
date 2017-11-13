@@ -1,0 +1,88 @@
+<div class="container mt-5">
+  <div class="row no-gutters">
+    <div class="col-md-4 mx-md-auto">
+      <h5 class="font-weight-bold mb-3">
+        Sign Up
+      </h5>
+
+      <script type="text/ng-template" id="generic-messages">
+        <div ng-message="required" class="invalid-feedback d-block fade-in">
+          The field is required.
+        </div>
+      </script>
+
+      <form name="signupForm" ng-submit="$ctrl.onSubmit(signupForm)" novalidate>
+        <div class="form-group">
+          <input
+            name="email"
+            type="email"
+            class="form-control"
+            placeholder="Enter email"
+            ng-model="$ctrl.user.email"
+            ng-class="{ 'is-invalid': signupForm.email.$invalid && signupForm.$submitted }"
+            required
+          >
+
+          <div ng-messages="signupForm.email.$error" ng-if="signupForm.$submitted">
+            <div class="invalid-feedback d-block fade-in" ng-message="email">
+              Enter valid email.
+            </div>
+            <div ng-messages-include="generic-messages"></div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input
+            name="password"
+            type="password"
+            class="form-control"
+            placeholder="Password"
+            ng-model="$ctrl.user.password"
+            ng-maxlength="8"
+            ng-minlength="8"
+            ng-class="{ 'is-invalid': signupForm.password.$invalid && signupForm.$submitted }"
+            required
+          >
+
+          <div ng-messages="signupForm.password.$error" ng-if="signupForm.$submitted">
+            <div class="invalid-feedback d-block fade-in" ng-message="minlength, maxlength">
+              Password must be 8 characters long. 
+            </div>
+            <div ng-messages-include="generic-messages"></div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input
+            name="passwordConfirmation"
+            type="password"
+            class="form-control"
+            placeholder="Password confirmation"
+            ng-model="$ctrl.user.password_confirmation"
+            ng-pattern="signupForm.password.$viewValue"
+            ng-class="{ 'is-invalid': signupForm.passwordConfirmation.$invalid && signupForm.$submitted }"
+            required
+          >
+
+          <div ng-messages="signupForm.passwordConfirmation.$error" ng-if="signupForm.$submitted">
+            <div class="invalid-feedback d-block fade-in" ng-message="pattern">
+              Password and Confirm password fields doesn’t match.
+            </div>
+            <div ng-messages-include="generic-messages"></div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg w-50">Sign Up</button>
+      </form>
+
+      <div class="form-group mt-3">
+        <p>
+          Already a member?
+          <a ui-sref="root.signin" class="btn btn-link pl-0">
+            Sign In
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

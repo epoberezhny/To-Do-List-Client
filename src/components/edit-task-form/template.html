@@ -1,0 +1,32 @@
+<div class="row no-gutters">
+  <form
+    name="editTaskForm"
+    class="edit-task-form"
+    ng-submit="$ctrl.onSubmit(editTaskForm)"
+    autocomplete="off"
+    novalidate
+  >
+    <div class="row no-gutters p-3 border border-primary">
+      <div class="col-12">
+        <input
+          name="name"
+          type="text"
+          class="form-control p-0 pl-3 border-0"
+          ng-model="$ctrl.taskParams.name"
+          autofocus
+          required
+        >
+      </div>
+    </div>
+
+    <div class="row no-gutters px-4 py-3 border border-bottom-0 border-top-0">
+      <div class="col-6 col-md-3">
+        <button type="submit" class="btn btn-block btn-success py-3">Save</button>
+      </div>
+
+      <div class="col">
+        <a href="#" class="btn btn-link py-3" ng-click="$ctrl.taskContainer.toggleEditMode()">Cancel</a>
+      </div>
+    </div>
+  </form>
+</div>

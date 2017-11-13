@@ -1,0 +1,22 @@
+<div class="tasks">
+  <div class="sortable" ng-sortable="{ handle: '.sorting-btns', animation: 300, draggable: '.task-draggable', onEnd: $ctrl.onSort }">
+    <div class="toggle task-draggable" ng-repeat="task in $ctrl.tasks track by task.id">
+      <tdl-task-container>
+        <tdl-edit-task-form
+          task="task"  
+          update-task="$ctrl.updateTask($index, params)"
+        ></tdl-edit-task-form>
+    
+        <tdl-task
+          task="task"
+          delete-task="$ctrl.deleteTask($index, params)"
+          update-task="$ctrl.updateTask($index, params)"
+        ></tdl-task>
+      </tdl-task-container>
+    </div>      
+  </div>
+  
+  <tdl-add-task-form
+    create-task="$ctrl.createTask(params)"
+  ></tdl-add-task-form>
+</div>
