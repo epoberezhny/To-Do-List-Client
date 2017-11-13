@@ -6,7 +6,7 @@ const CompressionPlugin = require('compression-webpack-plugin');
 
 const API_URL = {
   development: JSON.stringify('http://localhost:3000'),
-  production: JSON.stringify('https://ep-todo-list-api.herokuapp.com')
+  production: JSON.stringify('https://ep-todo-list.herokuapp.com')
 }
 
 const env = (process.env.NODE_ENV === 'production') ? 'production' : 'development';
