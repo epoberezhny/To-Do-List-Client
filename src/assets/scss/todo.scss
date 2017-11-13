@@ -8,6 +8,11 @@ $btn-color: #868686;
   position: relative;
 }
 
+.break-word {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
 .completed {
   color: $btn-color;
   text-decoration: line-through;

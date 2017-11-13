@@ -39,6 +39,7 @@ import tdlCommentsContainerComponent from './components/comments-container/compo
 import tdlCommentComponent           from './components/comment/component';
 import tdlAddCommentFormComponent    from './components/add-comment-form/component';
 import tdlDelteItemComponent         from './components/delete-item/component';
+import tdlFileInputComponent         from './components/file-input/component';
 
 // providers
 import resourceProvider from './providers/resource/provider';
@@ -77,6 +78,7 @@ module('ToDoList', [ngMessages, ngAnimate, ngUIRouter, ngTokenAuth, ngSortable, 
   .component('tdlComment',           tdlCommentComponent)
   .component('tdlAddCommentForm',    tdlAddCommentFormComponent)
   .component('tdlDeleteItem',        tdlDelteItemComponent)
+  .component('tdlFileInput',         tdlFileInputComponent)
 
   // providers
   .provider('Resource', resourceProvider)

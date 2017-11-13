@@ -7,7 +7,7 @@
     <input name="done" type="checkbox" ng-checked="$ctrl.task.done" ng-click="$ctrl.toggleDone($event)">
   </div>
 
-  <div class="col-8 col-md-9 pl-3">
+  <div class="col-8 col-md-9 pl-3 break-word">
     <span ng-class="{ completed: $ctrl.task.done }">
       {{ $ctrl.task.name }}
     </span>
