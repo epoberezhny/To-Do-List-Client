@@ -8,9 +8,7 @@
   <title>To Do List | {{ $state.current.data.title }}</title>
 </head>
 
-<body ng-class="{ 'modal-open': $state.includes('modal') }">
-  <div>{{ $$watchersCount }}</div>
-  
+<body ng-class="{ 'modal-open': $state.includes('modal') }"> 
   <div ui-view="root">
     <span>Loading...</span>
   </div>
