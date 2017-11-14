@@ -49,6 +49,9 @@ import projectFactory from './factories/project';
 import taskFactory    from './factories/task';
 import commentFactory from './factories/comment';
 
+// validators
+import maxFileSizeValidator from './validators/max-file-size';
+import fileTypeValidator    from './validators/file-type';
 
 module('ToDoList', [ngMessages, ngAnimate, ngUIRouter, ngTokenAuth, ngSortable, 'ui.bootstrap.datetimepicker'])
   // config
@@ -86,4 +89,8 @@ module('ToDoList', [ngMessages, ngAnimate, ngUIRouter, ngTokenAuth, ngSortable, 
   // factories
   .factory('Project', projectFactory)
   .factory('Task',    taskFactory)
-  .factory('Comment', commentFactory);
+  .factory('Comment', commentFactory)
+  
+  // validators
+  .directive('maxFileSize', maxFileSizeValidator)
+  .directive('fileType',    fileTypeValidator);

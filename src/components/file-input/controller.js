@@ -14,19 +14,7 @@ export default class FileInputController {
     this.$input = element(nativeInput);
     this.$input.on('change', this.onChange);
 
-    if ( this.$element.attr('hidden') ) this.$input.attr('hidde', 'true');
-
-    this.model.$validators.size = (modelValue, viewValue) => {
-      if ( this.model.$isEmpty(modelValue) ) return true;
-      if ( modelValue.size < 10000000 ) return true;
-      return false;
-    };
-
-    this.model.$validators.type = (modelValue, viewValue) => {
-      if ( this.model.$isEmpty(modelValue) ) return true;
-      if ( /jpeg|png/.test(modelValue.type) ) return true;
-      return false;
-    };
+    if ( this.$element.attr('hidden') ) this.$input.attr('hidden', 'true');
   }
 
   $onDestroy() {
@@ -34,8 +22,8 @@ export default class FileInputController {
   }
 
   onChange(event) {
-    var input = event.target,
-        file  = input.files && input.files[0];
+    var input  = event.target,
+        [file] = input.files;
 
     if ( !file ) { this.resetPreview(); return; }
 

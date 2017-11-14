@@ -1,4 +1,4 @@
-<form name="addCommentForm">
+<form name="addCommentForm" ng-submit="$ctrl.onSubmit(addCommentForm)">
   <div class="modal-body">
     <div class="p-relative form-group">
       <textarea
@@ -13,17 +13,23 @@
           name="file"
           ng-model="$ctrl.commentParams.attachment"
           preview="$ctrl.preview"
+          max-file-size="10000000"
+          file-type="jpeg, png"
+          ng-required="!$ctrl.commentParams.text"
           hidden
         ></tdl-file-input>
       </label>
     </div>
 
-    <div ng-messages="addCommentForm.file.$error">
-      <div class="invalid-feedback d-block fade-in" ng-message="size">
+    <div ng-messages="addCommentForm.file.$error" ng-if="addCommentForm.$submitted">
+      <div class="invalid-feedback d-block fade-in" ng-message="maxFileSize">
         An uploaded file is too large. The size shouldn’t exceed 10 MB.
       </div>
-      <div class="invalid-feedback d-block fade-in" ng-message="type">
+      <div class="invalid-feedback d-block fade-in" ng-message="fileType">
         Wrong file format. You can upload a *.jpg or *.png formats files only
+      </div>
+      <div ng-message="required" class="invalid-feedback d-block fade-in">
+        Text or file is required.
       </div>
     </div>
 
@@ -36,7 +42,7 @@
 
   <div class="modal-footer row no-gutters border-top-0">
     <div class="col-5 col-md-4">
-      <button type="button" class="btn btn-block btn-primary py-3" ng-click="$ctrl.onSubmit(addCommentForm)">Save</button>
+      <button type="submit" class="btn btn-block btn-primary py-3">Save</button>
     </div>
 
     <div>
