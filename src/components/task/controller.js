@@ -56,6 +56,11 @@ export default class TaskController {
   setComments(comments) {
     this.task.comments = comments;
   }
+
+  countComments() {
+    if (this.task.comments) return this.task.comments.length;
+    return this.task['comments_count'];
+  }
 }
 
 TaskController.$inject = ['$state'];

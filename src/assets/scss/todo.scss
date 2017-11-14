@@ -68,7 +68,12 @@ textarea {
 }
 
 .sorting-btns {
-  transition: all .25s ease !important; 
+  transition: all .25s ease !important;
+  cursor: move !important;
+
+  > .fa {
+    font-size: 10px;
+  }
 }
 
 .project-header:hover > .project-btns,
@@ -91,10 +96,6 @@ textarea {
 
 .fa-caret-right {
   transition: transform .25s ease;
-}
-
-.sorting-btns > .fa {
-  font-size: 10px;
 }
 
 .color-todo,
