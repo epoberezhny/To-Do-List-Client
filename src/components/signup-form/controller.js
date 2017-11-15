@@ -1,8 +1,9 @@
 export default class SignupController {
-  constructor($auth, $state) {
-    this.$auth  = $auth;
-    this.$state = $state;
-    this.user   = {};
+  constructor($auth, $state, Messages) {
+    this.$auth    = $auth;
+    this.$state   = $state;
+    this.Messages = Messages;
+    this.user     = {};
   }
 
   onSubmit(form) {
@@ -10,8 +11,11 @@ export default class SignupController {
 
     this.$auth.submitRegistration(this.user).then(() => {
       this.$state.go('root.projects', {}, { reload: true });
-    }).catch(() => {
+    }).catch(response => {
       this.reset();
+
+      var [message] = response.data.errors['full_messages'];
+      this.Messages.set({ message, type: 'danger' });
     });
   }
 
@@ -20,4 +24,4 @@ export default class SignupController {
   }
 }
 
-SignupController.$inject = ['$auth', '$state'];
+SignupController.$inject = ['$auth', '$state', 'Messages'];

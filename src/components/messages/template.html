@@ -1,0 +1,11 @@
+<div ng-switch="$ctrl.messageParams.type">
+  <div class="alert alert-success toggle" ng-switch-when="success" role="alert">
+    <strong>Well done!</strong>
+    {{ $ctrl.messageParams.message }}
+  </div>
+
+  <div class="alert text-danger pl-0 mb-0 toggle" ng-switch-when="danger" role="alert">
+    <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+    {{ $ctrl.messageParams.message }}
+  </div>
+</div>

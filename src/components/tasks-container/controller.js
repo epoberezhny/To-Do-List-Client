@@ -1,10 +1,11 @@
 import { extend, isDefined, forEach } from 'angular';
 
 export default class TasksContainerController {
-  constructor(Task, orderBy) {
-    this.Task    = Task;
-    this.orderBy = orderBy;
-    this.onSort  = this.onSort.bind(this);
+  constructor(Task, orderBy, Messages) {
+    this.Task     = Task;
+    this.orderBy  = orderBy;
+    this.Messages = Messages
+    this.onSort   = this.onSort.bind(this);
   }
 
   $onInit(params = {}) {
@@ -14,7 +15,7 @@ export default class TasksContainerController {
 
     this.Task.index(params).then(response => {
       this.orderize(response.data, 'priority');
-    }).catch();
+    });
   }
 
   createTask(params) {
@@ -22,7 +23,7 @@ export default class TasksContainerController {
 
     return this.Task.create(params).then(response => {
       this.tasks.push(response.data);
-    }).catch();
+    });
   }
 
   updateTask(index, params) {
@@ -32,16 +33,19 @@ export default class TasksContainerController {
       var task = this.tasks[index];
       extend(task, response.data);
       if ( this.allDone() ) {
-        
+        this.Messages.set({
+          message: "You're successfully completed all the task.",
+          type: 'success'
+        });
       }
-    }).catch();
+    });
   }
 
   deleteTask(index, params) {
     return this.Task.delete(params).then(() => {
       this.tasks.splice(index, 1);
       this.prioritize(this.tasks);
-    }).catch();
+    });
   }
 
   onSort(event) {
@@ -76,4 +80,4 @@ export default class TasksContainerController {
   }
 }
 
-TasksContainerController.$inject = ['Task', 'orderByFilter'];
+TasksContainerController.$inject = ['Task', 'orderByFilter', 'Messages'];

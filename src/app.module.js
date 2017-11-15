@@ -2,12 +2,12 @@
 import './assets/scss/index.scss';
 
 // angular modules
-import { module }     from 'angular';
-import ngMessages     from 'angular-messages';
-import ngAnimate      from 'angular-animate';
-import ngUIRouter     from '@uirouter/angularjs';
-import ngTokenAuth    from 'ng-token-auth';
-import ngSortable     from 'angular-legacy-sortablejs-maintained';
+import { module }  from 'angular';
+import ngMessages  from 'angular-messages';
+import ngAnimate   from 'angular-animate';
+import ngUIRouter  from '@uirouter/angularjs';
+import ngTokenAuth from 'ng-token-auth';
+import ngSortable  from 'angular-legacy-sortablejs-maintained';
 
 import 'angular-bootstrap-datetimepicker/src/js/datetimepicker';
 import 'angular-cookie';
@@ -40,14 +40,16 @@ import tdlCommentComponent           from './components/comment/component';
 import tdlAddCommentFormComponent    from './components/add-comment-form/component';
 import tdlDelteItemComponent         from './components/delete-item/component';
 import tdlFileInputComponent         from './components/file-input/component';
+import tdlMessagesComponent          from './components/messages/component';
 
 // providers
 import resourceProvider from './providers/resource/provider';
 
 // factories
-import projectFactory from './factories/project';
-import taskFactory    from './factories/task';
-import commentFactory from './factories/comment';
+import projectFactory  from './factories/project';
+import taskFactory     from './factories/task';
+import commentFactory  from './factories/comment';
+import messagesFactory from './factories/messages';
 
 // validators
 import maxFileSizeValidator from './validators/max-file-size';
@@ -82,6 +84,7 @@ module('ToDoList', [ngMessages, ngAnimate, ngUIRouter, ngTokenAuth, ngSortable, 
   .component('tdlAddCommentForm',    tdlAddCommentFormComponent)
   .component('tdlDeleteItem',        tdlDelteItemComponent)
   .component('tdlFileInput',         tdlFileInputComponent)
+  .component('tdlMessages',          tdlMessagesComponent)
 
   // providers
   .provider('Resource', resourceProvider)
@@ -90,6 +93,7 @@ module('ToDoList', [ngMessages, ngAnimate, ngUIRouter, ngTokenAuth, ngSortable, 
   .factory('Project', projectFactory)
   .factory('Task',    taskFactory)
   .factory('Comment', commentFactory)
+  .factory('Messages', messagesFactory)
   
   // validators
   .directive('maxFileSize', maxFileSizeValidator)

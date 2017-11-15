@@ -1,8 +1,9 @@
 export default class SigninFormController {
-  constructor($auth, $state) {
-    this.$auth  = $auth;
-    this.$state = $state;
-    this.user   = {};
+  constructor($auth, $state, Messages) {
+    this.$auth    = $auth;
+    this.$state   = $state;
+    this.Messages = Messages;
+    this.user     = {};
   }
 
   onSubmit(form) {
@@ -10,8 +11,11 @@ export default class SigninFormController {
 
     this.$auth.submitLogin(this.user).then(() => {
       this.$state.go('root.projects', {}, { reload: true });
-    }).catch(() => {
+    }).catch(response => {
       this.reset();
+
+      var [message] = response.errors;
+      this.Messages.set({ message, type: 'danger' });
     });
   }
 
@@ -20,4 +24,4 @@ export default class SigninFormController {
   }
 }
 
-SigninFormController.$inject = ['$auth', '$state'];
+SigninFormController.$inject = ['$auth', '$state', 'Messages'];

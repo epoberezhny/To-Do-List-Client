@@ -19,7 +19,7 @@ export default class CommentsContainerController {
         if ( isFunction(this.params.setComments) ) {
           this.params.setComments(this.comments);
         }
-      }).catch();
+      });
     }
   }
 
@@ -32,7 +32,7 @@ export default class CommentsContainerController {
       if ( isFunction(this.params.setComments) ) {
         this.params.setComments(this.comments);
       }
-    }).catch();
+    });
   }
 
   deleteComment(index, params) {
@@ -43,7 +43,7 @@ export default class CommentsContainerController {
       if ( isFunction(this.params.setComments) ) {
         this.params.setComments(this.comments);
       }
-    }).catch();
+    });
   }
 }
 
