@@ -10,7 +10,9 @@ export default class DeadlinePopoverController {
     if (this.task.deadline) {
       this.taskParams.deadline = new Date(this.task.deadline);
     } else {
-      this.taskParams.deadline = new Date();
+      var defaultDate = new Date();
+      defaultDate.setHours(12, 0, 0, 0);
+      this.taskParams.deadline = defaultDate;
     }
   }
 
