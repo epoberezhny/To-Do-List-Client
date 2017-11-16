@@ -14,7 +14,7 @@ export default class TasksContainerController {
     params['project_id'] = this.projectId;
 
     this.Task.index(params).then(response => {
-      this.orderize(response.data, 'priority');
+      this.orderize(response.data);
     });
   }
 
@@ -61,7 +61,7 @@ export default class TasksContainerController {
     this.Task.update(params).then(() => {
       this.prioritize(this.tasks);
     }).catch(() => {
-      this.orderize(this.tasks, 'priority');
+      this.orderize(this.tasks);
     });
   }
 
