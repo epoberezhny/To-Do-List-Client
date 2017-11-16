@@ -1,5 +1,5 @@
 <div class="tasks">
-  <div class="sortable" ng-sortable="{ handle: '.sorting-btns', animation: 300, draggable: '.task-draggable', onEnd: $ctrl.onSort }">
+  <div class="sortable" ng-sortable="{ handle: '.sorting-btns', animation: 250, draggable: '.task-draggable', onEnd: $ctrl.onSort }">
     <div class="toggle task-draggable" ng-repeat="task in $ctrl.tasks track by task.id">
       <tdl-task-container>
         <tdl-edit-task-form
