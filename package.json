@@ -41,6 +41,6 @@
     "angular-legacy-sortablejs-maintained": "^0.5.2",
     "angular-messages": "^1.6.6",
     "ng-token-auth": "^0.0.30",
-    "sortablejs": "https://github.com/epoberezhny/Sortable.git#checkboxes"
+    "sortablejs": "https://github.com/epoberezhny/Sortable.git#checkboxes-fix"
   }
 }

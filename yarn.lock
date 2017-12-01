@@ -5014,9 +5014,9 @@ sort-keys@^1.0.0:
   dependencies:
     is-plain-obj "^1.0.0"
 
-"sortablejs@https://github.com/epoberezhny/Sortable.git#checkboxes":
+"sortablejs@https://github.com/epoberezhny/Sortable.git#checkboxes-fix":
   version "1.7.0"
-  resolved "https://github.com/epoberezhny/Sortable.git#54873d1db04a13706377cae46d84ff3872a65919"
+  resolved "https://github.com/epoberezhny/Sortable.git#dc2bdf756c889f8a47c084fd8662dc7d08661a10"
 
 source-list-map@^2.0.0:
   version "2.0.0"
