@@ -1,0 +1,31 @@
+<div class="row no-gutters mb-2 project" ng-class="{ opened: $ctrl.opened }">
+  <div class="col-md-9 mx-md-auto">
+    <div
+      class="row no-gutters p-2 border project-header color-todo"
+      ng-click="$ctrl.toggleOpened()"
+      ng-class="{ rounded: !$ctrl.opened, 'rounded-top': $ctrl.opened }"
+    >
+      <div class="col-auto text-center pl-2">
+        <span class="fa fa-caret-right" aria-hidden="true" ng-class="{ 'fa-rotate-90': $ctrl.opened }"></span>
+      </div>
+
+      <div class="col-9 col-md-10 pl-2 break-word">
+        <span class="font-weight-bold">
+          {{ $ctrl.project.name }}
+        </span>
+      </div>
+
+      <div class="col text-right pr-2 project-btns">
+        <span class="fa fa-pencil fa-fw btn-todo" ng-click="$ctrl.projectContainer.toggleEditMode($event)"></span>
+        <span class="fa fa-trash-o fa-fw ml-1 btn-todo" ng-click="$ctrl.openDeleteModal($event)"></span>
+      </div>
+    </div>
+
+    <div class="slide-down" ng-if="$ctrl.opened">
+      <tdl-tasks-container
+        project-id="::$ctrl.project.id"
+        tasks="$ctrl.project.tasks"
+      ></tdl-tasks-container>
+    </div>
+  </div>
+</div>

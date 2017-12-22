@@ -1,0 +1,35 @@
+<div class="row no-gutters mb-2">
+  <div class="col-md-9 mx-md-auto">
+    <div class="row no-gutters">
+      <form
+        name="editProjectForm"
+        class="edit-project-form"
+        ng-submit="$ctrl.onSubmit(editProjectForm)"
+        autocomplete="off"
+      >
+        <div class="row no-gutters p-2 border border-primary rounded">
+          <div class="col-12">
+            <input
+              name="name"
+              type="text"
+              class="form-control p-0 pl-2 border-0"
+              ng-model="$ctrl.projectParams.name"
+              required
+              autofocus
+            >
+          </div>
+        </div>
+
+        <div class="row no-gutters py-3">
+          <div class="col-6 col-md-3">
+            <button type="submit" class="btn btn-block btn-primary py-3">Save</button>
+          </div>
+
+          <div class="col">
+            <a href="#" class="btn btn-link py-3" ng-click="$ctrl.projectContainer.toggleEditMode()">Cancel</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

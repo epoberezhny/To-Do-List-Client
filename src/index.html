@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ToDoList">
+
+<head>
+  <base href="/">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>To Do List | {{ $state.current.data.title }}</title>
+</head>
+
+<body ng-class="{ 'modal-open': $state.includes('modal') }"> 
+  <div ui-view="root">
+    <span>Loading...</span>
+  </div>
+
+  <div class="toggle todo-modal" ui-view="modal"></div>
+</body>
+
+</html>

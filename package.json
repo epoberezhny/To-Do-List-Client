@@ -1,0 +1,46 @@
+{
+  "name": "todo-list-client",
+  "version": "1.0.0",
+  "description": "todo list",
+  "scripts": {
+    "start": "webpack-dev-server --open",
+    "dist": "NODE_ENV=production webpack -p --progress"
+  },
+  "keywords": [
+    "todo",
+    "list"
+  ],
+  "author": "Eugene Poberezhny",
+  "devDependencies": {
+    "autoprefixer": "^7.1.6",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "bootstrap": "^4.0.0-beta.2",
+    "compression-webpack-plugin": "^1.0.1",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.1",
+    "file-loader": "^1.1.5",
+    "font-awesome": "^4.7.0",
+    "html-loader": "^0.5.1",
+    "html-webpack-plugin": "^2.30.1",
+    "node-sass": "^4.5.3",
+    "postcss-loader": "^2.0.8",
+    "precss": "^2.0.0",
+    "sass-loader": "^6.0.6",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.3"
+  },
+  "dependencies": {
+    "@uirouter/angularjs": "^1.0.10",
+    "@uirouter/sticky-states": "^1.4.1",
+    "angular": "^1.6.6",
+    "angular-animate": "^1.6.6",
+    "angular-bootstrap-datetimepicker": "^1.1.4",
+    "angular-cookie": "^4.1.0",
+    "angular-legacy-sortablejs-maintained": "^0.5.2",
+    "angular-messages": "^1.6.6",
+    "ng-token-auth": "^0.0.30",
+    "sortablejs": "https://github.com/epoberezhny/Sortable.git#checkboxes-fix"
+  }
+}

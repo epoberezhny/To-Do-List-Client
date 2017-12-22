@@ -1,0 +1,25 @@
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">
+        Add Comment
+      </h5>
+      <button type="button" class="close" ng-click="$ctrl.modal.close()" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+    <tdl-add-comment-form
+      on-close="$ctrl.modal.close()"
+      create-comment="$ctrl.createComment(params)"
+    ></tdl-add-comment-form>
+
+    <div class="border border-bottom-0 border-left-0 border-right-0 p-3 comments" ng-if="$ctrl.comments.length !== 0">
+      <div class="toggle" ng-repeat="comment in $ctrl.comments track by comment.id">
+        <tdl-comment comment="::comment" delete-comment="$ctrl.deleteComment($index, comment)"></tdl-comment>
+      </div>
+    </div>
+
+  </div>
+</div>

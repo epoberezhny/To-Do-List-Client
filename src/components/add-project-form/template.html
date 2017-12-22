@@ -1,0 +1,39 @@
+<div class="row no-gutters mb-5">
+  <div class="col-md-9 mx-md-auto">
+    <div class="row no-gutters">
+      <form
+        name="addProjectForm"
+        class="new-project-form"
+        autocomplete="off"
+        novalidate
+        ng-submit="$ctrl.onSubmit(addProjectForm)"
+      >
+        <div class="row no-gutters p-2 border rounded">
+          <div class="col-12">
+            <input
+              name="name"
+              type="text"
+              class="form-control p-0 pl-2 border-0"
+              placeholder="Enter Project Name..."
+              ng-click="$ctrl.activate()"
+              ng-model="$ctrl.projectParams.name"
+              required
+            >
+          </div>
+        </div>
+
+        <div style="min-height: 86px;">
+          <div class="row no-gutters py-3 toggle" ng-if="$ctrl.active">
+            <div class="col-6 col-md-3">
+              <button type="submit" class="btn btn-block btn-primary py-3">Create project</button>
+            </div>
+  
+            <div class="col">
+              <a href="#" class="btn btn-link py-3" ng-click="$ctrl.deactivate()">Cancel</a>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
