@@ -1,14 +1,15 @@
 import { extend } from 'angular';
 
 export default class ProjectsContainerController {
-  constructor(Project, Messages) {
+  constructor(Project, orderBy, Messages) {
     this.Project  = Project;
+    this.orderBy  = orderBy;
     this.Messages = Messages;
   }
 
   $onInit() {
     this.Project.index().then(response => {
-      this.projects = response.data;
+      this.projects = this.orderBy(response.data, 'id');
     });
   }
 
@@ -38,4 +39,4 @@ export default class ProjectsContainerController {
   }
 }
 
-ProjectsContainerController.$inject = ['Project', 'Messages'];
+ProjectsContainerController.$inject = ['Project', 'orderByFilter', 'Messages'];
