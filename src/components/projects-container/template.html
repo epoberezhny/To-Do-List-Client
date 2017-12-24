@@ -11,7 +11,7 @@
     </div>
   </div>
 
-  <div class="toggle" ng-repeat="project in $ctrl.projects | orderBy: 'id' track by project.id">
+  <div class="toggle" ng-repeat="project in $ctrl.projects | track by project.id">
     <tdl-project-container>
       <tdl-edit-project-form
         project="project"  
