@@ -4,7 +4,7 @@ export default class TasksContainerController {
   constructor(Task, orderBy, Messages) {
     this.Task     = Task;
     this.orderBy  = orderBy;
-    this.Messages = Messages
+    this.Messages = Messages;
     this.onSort   = this.onSort.bind(this);
   }
 
