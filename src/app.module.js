@@ -17,6 +17,7 @@ import runConfig      from './config/run';
 import authConfig     from './config/auth';
 import routerConfig   from './config/router';
 import resourceConfig from './config/resource';
+import compilerConfig from './config/compiler';
 
 // components
 import tdlAppComponent               from './components/app/component';
@@ -61,6 +62,7 @@ module('ToDoList', [ngMessages, ngAnimate, ngUIRouter, ngTokenAuth, ngSortable, 
   .config(authConfig)
   .config(routerConfig)
   .config(resourceConfig)
+  .config(compilerConfig)
 
   // components
   .component('tdlApp',               tdlAppComponent)
